@@ -25,7 +25,10 @@ const Home: NextPage = () => {
         <div className={styles.heroImage}>
           <Image src="/hero-image.png" alt='coffe maker' width={700} height={400} />
         </div>
-        <Card name='Darkhorse Coffee' imageUrl='/hero-image.png' href='coffee-store/darkhorse-coffee' />
+        <div className={styles.cardLayout}>
+
+          <Card name='Darkhorse Coffee' imageUrl='/hero-image.png' href='coffee-store/darkhorse-coffee' />
+        </div>
       </main>
     </div>
   )
