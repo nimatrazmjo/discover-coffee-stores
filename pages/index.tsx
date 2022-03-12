@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { FormEventHandler } from 'react'
 import Banner from '../components/banner/banner.component'
+import Card from '../components/card/card'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -22,9 +23,9 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Banner changeHandler={handleButton} />
         <div className={styles.heroImage}>
-
           <Image src="/hero-image.png" alt='coffe maker' width={700} height={400} />
         </div>
+        <Card name='Darkhorse Coffee' imageUrl='/hero-image.png' href='coffee-store/darkhorse-coffee' />
       </main>
     </div>
   )
