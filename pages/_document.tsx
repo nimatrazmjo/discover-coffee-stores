@@ -4,7 +4,7 @@ import Link from "next/link";
 class MyDocument extends Document {
   render(): JSX.Element {
     return (
-      <Html lang="en">Î
+      <Html lang="en">
         <Head>
         </Head>
         <body>

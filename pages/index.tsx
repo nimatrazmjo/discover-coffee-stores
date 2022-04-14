@@ -1,12 +1,25 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { FormEventHandler } from 'react'
+
+import CoffeeStores from '../data/coffee-stores.json';
+
 import Banner from '../components/banner/banner.component'
 import Card from '../components/card/card'
 import styles from '../styles/Home.module.css'
+import { ICoffeeStore } from '../interface/coffee-store.interface';
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  return {
+    props: {CoffeeStores}, // will be passed to the page component as props
+  }
+}
+
+interface HomeProps {
+  CoffeeStores: ICoffeeStore[]
+}
+
+const Home: NextPage<HomeProps> = ({CoffeeStores}) => {
   const handleButton = () => {
     console.log('handler clicked');
 
@@ -25,9 +38,15 @@ const Home: NextPage = () => {
         <div className={styles.heroImage}>
           <Image src="/hero-image.png" alt='coffe maker' width={700} height={400} />
         </div>
+        <h2 className={styles.heading2}>Toronto Stores</h2>
         <div className={styles.cardLayout}>
-
-          <Card name='Darkhorse Coffee' imageUrl='/hero-image.png' href='coffee-store/darkhorse-coffee' />
+          {
+            CoffeeStores.map((coffeeStore: any) => <Card  key={coffeeStore.id}
+              name={coffeeStore.name} 
+              imageUrl={coffeeStore.imgUrl}
+              href={`coffee-store/${coffeeStore.id}`} />)
+          }
+          
         </div>
       </main>
     </div>
