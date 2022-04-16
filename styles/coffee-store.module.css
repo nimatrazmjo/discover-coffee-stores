@@ -1,0 +1,54 @@
+.layout {
+    background-color: --var(--color-primary);
+    margin-top: 15rem;
+    padding: 0 10rem; 
+}
+.container {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.nameWrapper {
+    padding: 2rem;
+    color: var( --text-white-100);
+}
+.iconWrapper {
+    display: flex;
+    padding: .5rem 2rem;
+    color: var( --text-purple);
+}
+.iconWrapper p,
+.iconWrapper img {
+    color: inherit;
+}
+
+.storeImg {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    margin-right: 20rem;
+}
+.col1 {
+    margin-right: 2rem;
+}
+
+.col2 {
+    padding: 3rem;
+    margin-right: auto;
+    width: 50%;
+}
+.text {
+    font-size: 1.6rem;
+    color: var(--text-purple-dark);
+    margin-left: 1rem;
+}
+.upvoteButton {
+    background-color: var(--text-purple-dark);
+    color: var(--text-white-100);
+    border: none;
+    border-radius: .5rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
